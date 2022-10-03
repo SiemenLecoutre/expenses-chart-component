@@ -1,8 +1,17 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import Head from 'next/head';
+import styles from '../styles/Home.module.css';
 
 export default function Home() {
+  function myFunction(e) {
+    console.log(e);
+    var x = document.getElementById('1');
+    if (x.style.display === 'none') {
+      x.style.display = 'block';
+    } else {
+      x.style.display = 'none';
+    }
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -12,58 +21,89 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+        {/* Upper card */}
+        <div className={styles.card}>
+          <div className={styles.container}>
+            <p className={styles.balanceText}>My Balance</p>
+            <p className={styles.balance}>$921.48</p>
+          </div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img className={styles.logo} src="/images/logo.svg" alt="logo" />
+        </div>
+        {/* Lower card */}
+        <div className={styles.card2}>
+          <div className={styles.container}>
+            <h1 className={styles.title}>Spending - Last 7 days</h1>
+            {/* Column ? */}
+            <div className={styles.chart}>
+              <div className={styles.chartRow}>
+                <label id="1" className={styles.label}>
+                  $126
+                </label>
+                <div
+                  onClick={myFunction}
+                  name="1"
+                  style={{ height: 0.4 * 140 + 'px' }}
+                  className={styles.chartPilar}
+                ></div>
+                <p>mon</p>
+              </div>
+              <div className={styles.chartRow}>
+                <div
+                  style={{ height: 80 + 'px' }}
+                  className={styles.chartPilar}
+                ></div>
+                <p>tue</p>
+              </div>
+              <div className={styles.chartRow}>
+                <div
+                  style={{ height: 135 + 'px' }}
+                  className={styles.chartPilar}
+                ></div>
+                <p>wed</p>
+              </div>
+              <div className={styles.chartRow}>
+                <div
+                  style={{ height: 70 + 'px' }}
+                  className={styles.chartPilar}
+                ></div>
+                <p>thu</p>
+              </div>
+              <div className={styles.chartRow}>
+                <div
+                  style={{ height: 50 + 'px' }}
+                  className={styles.chartPilar}
+                ></div>
+                <p>fri</p>
+              </div>
+              <div className={styles.chartRow}>
+                <div
+                  style={{ height: 90 + 'px' }}
+                  className={styles.chartPilar}
+                ></div>
+                <p>sat</p>
+              </div>
+              <div className={styles.chartRow}>
+                <div
+                  style={{ height: 55 + 'px' }}
+                  className={styles.chartPilar}
+                ></div>
+                <p>sun</p>
+              </div>
+            </div>
+            <span className={styles.divider}></span>
+            {/* Columns */}
+            <div>
+              <p>Total this months</p>
+              <p>$478.33</p>
+            </div>
+            <div>
+              <p>+2.4%</p>
+              <p>from last month</p>
+            </div>
+          </div>
         </div>
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
     </div>
-  )
+  );
 }
