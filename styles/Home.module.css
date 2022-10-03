@@ -69,26 +69,14 @@
   justify-content: space-evenly;
   min-height: 14rem;
   width: 100%;
-  background-color: white;
 }
 
-.chartRow {
+.divider {
+  border: 0;
+  border-top: 0.2rem solid var(--cream);
+}
+
+.lowerInformation {
   display: flex;
-  flex-direction: column;
-  justify-content: end;
-  align-items: center;
-  background-color: white;
-  min-width: 1.5rem;
-  min-height: 100%;
-}
-
-.chartPilar {
-  background-color: var(--soft-red);
-  min-width: 2rem;
-  border-radius: 2px;
-}
-
-.chartPilar:hover {
-  background-color: var(--cyan);
-  min-width: 2rem;
+  justify-content: space-between;
 }

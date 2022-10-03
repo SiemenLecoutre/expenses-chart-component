@@ -1,16 +1,16 @@
 import Head from 'next/head';
+import ChartRow from '../components/chartRow';
 import styles from '../styles/Home.module.css';
+import data from '../data.json';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
-  function myFunction(e) {
-    console.log(e);
-    var x = document.getElementById('1');
-    if (x.style.display === 'none') {
-      x.style.display = 'block';
-    } else {
-      x.style.display = 'none';
-    }
-  }
+  const [today, setToday] = useState();
+
+  useEffect(() => {
+    const date = new Date();
+    setToday(date.getDay());
+  }, []);
 
   return (
     <div className={styles.container}>
@@ -36,70 +36,27 @@ export default function Home() {
             <h1 className={styles.title}>Spending - Last 7 days</h1>
             {/* Column ? */}
             <div className={styles.chart}>
-              <div className={styles.chartRow}>
-                <label id="1" className={styles.label}>
-                  $126
-                </label>
-                <div
-                  onClick={myFunction}
-                  name="1"
-                  style={{ height: 0.4 * 140 + 'px' }}
-                  className={styles.chartPilar}
-                ></div>
-                <p>mon</p>
-              </div>
-              <div className={styles.chartRow}>
-                <div
-                  style={{ height: 80 + 'px' }}
-                  className={styles.chartPilar}
-                ></div>
-                <p>tue</p>
-              </div>
-              <div className={styles.chartRow}>
-                <div
-                  style={{ height: 135 + 'px' }}
-                  className={styles.chartPilar}
-                ></div>
-                <p>wed</p>
-              </div>
-              <div className={styles.chartRow}>
-                <div
-                  style={{ height: 70 + 'px' }}
-                  className={styles.chartPilar}
-                ></div>
-                <p>thu</p>
-              </div>
-              <div className={styles.chartRow}>
-                <div
-                  style={{ height: 50 + 'px' }}
-                  className={styles.chartPilar}
-                ></div>
-                <p>fri</p>
-              </div>
-              <div className={styles.chartRow}>
-                <div
-                  style={{ height: 90 + 'px' }}
-                  className={styles.chartPilar}
-                ></div>
-                <p>sat</p>
-              </div>
-              <div className={styles.chartRow}>
-                <div
-                  style={{ height: 55 + 'px' }}
-                  className={styles.chartPilar}
-                ></div>
-                <p>sun</p>
-              </div>
+              {data.map((i, index) => (
+                <ChartRow
+                  key={i.day}
+                  today={today}
+                  day={i.day}
+                  index={index}
+                  amount={i.amount}
+                />
+              ))}
             </div>
-            <span className={styles.divider}></span>
+            <hr className={styles.divider}></hr>
             {/* Columns */}
-            <div>
-              <p>Total this months</p>
-              <p>$478.33</p>
-            </div>
-            <div>
-              <p>+2.4%</p>
-              <p>from last month</p>
+            <div className={styles.lowerInformation}>
+              <div>
+                <p>Total this months</p>
+                <p>$478.33</p>
+              </div>
+              <div>
+                <p>+2.4%</p>
+                <p>from last month</p>
+              </div>
             </div>
           </div>
         </div>

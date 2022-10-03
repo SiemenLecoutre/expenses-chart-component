@@ -1,0 +1,29 @@
+.chartRow {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+
+  min-width: 1.5rem;
+  min-height: 100%;
+}
+
+.chartPilar {
+  background-color: var(--soft-red);
+  min-width: 2rem;
+  border-radius: 2px;
+}
+
+/* .chartPilar:hover {
+  background-color: var(--cyan);
+  min-width: 2rem;
+} */
+
+.label {
+  color: white;
+  font-size: 14px;
+  padding: 0.1rem;
+  border-radius: 3px;
+  background-color: var(--dark-brown);
+  margin-bottom: 0.4rem;
+}
