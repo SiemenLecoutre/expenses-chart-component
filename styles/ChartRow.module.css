@@ -10,8 +10,14 @@
 
 .chartPilar {
   background-color: var(--soft-red);
-  min-width: 2rem;
+  min-width: 2.5rem;
   border-radius: 2px;
+}
+
+@media only screen and (max-width: 375px) {
+  .chartPilar {
+    min-width: 2rem;
+  }
 }
 
 .chartPilar:hover {
