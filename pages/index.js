@@ -50,12 +50,12 @@ export default function Home() {
             {/* Columns */}
             <div className={styles.lowerInformation}>
               <div>
-                <p>Total this months</p>
-                <p>$478.33</p>
+                <p className={styles.lightText}>Total this week</p>
+                <p className={styles.totalNum}>$478.33</p>
               </div>
               <div>
-                <p>+2.4%</p>
-                <p>from last month</p>
+                <p className={styles.percentage}>+2.4%</p>
+                <p className={styles.lightText}>from last month</p>
               </div>
             </div>
           </div>

@@ -14,15 +14,15 @@
   border-radius: 2px;
 }
 
-/* .chartPilar:hover {
-  background-color: var(--cyan);
-  min-width: 2rem;
-} */
+.chartPilar:hover {
+  filter: brightness(130%);
+  cursor: pointer;
+}
 
 .label {
   color: white;
   font-size: 14px;
-  padding: 0.1rem;
+  padding: 0.4rem;
   border-radius: 3px;
   background-color: var(--dark-brown);
   margin-bottom: 0.4rem;

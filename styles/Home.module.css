@@ -77,6 +77,25 @@
 }
 
 .lowerInformation {
+  margin-top: 1rem;
   display: flex;
   justify-content: space-between;
+}
+
+.lightText {
+  color: var(--medium-brown);
+  margin-bottom: 0.2rem;
+  margin-top: 0;
+}
+
+.totalNum {
+  font-size: 32px;
+  margin-top: 0;
+  font-weight: 700;
+}
+
+.percentage {
+  text-align: right;
+  margin-bottom: 0;
+  font-weight: 700;
 }
